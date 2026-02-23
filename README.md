@@ -1,64 +1,57 @@
-# AutoPrecision — Site Garagiste
+# AutoPrecision — Site Vitrine Garage Automobile
 
-Site HTML / CSS / JS pour un garage automobile.
-Formulaire non fonctionnel car site exemple
+## Installation & lancement
 
-## Structure du projet
+Ouvrir directement `index.html` dans un navigateur, ou via un serveur local :
+
+## Stack technique
+
+- **HTML / CSS / JS** — site statique, zéro dépendance
+- **CSS custom** — styles dans `css/style.css`
+- **JS vanilla** — scroll reveal, menu mobile, formulaire dans `js/main.js`
+
+---
+
+## Structure des fichiers
 
 ```
 garage-site/
-├── index.html              
+├── index.html                ← Page principale (composition complète)
 ├── css/
-│   └── style.css          
+│   └── style.css             ← Tous les styles (nav, hero, grille, formulaire, footer)
 ├── js/
-│   └── main.js             
+│   └── main.js               ← Scroll reveal (.reveal), menu mobile, submitForm()
 └── img/
-    ├── hero.jpg           
-    ├── about.jpg          
-    ├── pistolet_peinture.png 
-    └── disque_frein.png   
+    ├── hero.jpg              ← Image de fond du hero
+    ├── about.jpg             ← Photo de l'atelier
+    ├── pistolet_peinture.png ← Icône service Carrosserie & Peinture
+    └── disque_frein.png      ← Icône service Freinage & Suspension
 ```
 
-## Contenu de la page
+---
 
-La page `index.html` comprend les sections suivantes :
+## Sections de la page
 
-- **Nav** — Logo, liens de navigation et CTA "Prendre RDV"
-- **Hero** — Accroche principale avec statistiques (25 ans, 4k clients, 98% satisfaction)
-- **Services** — 6 cartes : Mécanique générale, Carrosserie & Peinture, Diagnostic électronique, Freinage & Suspension, Climatisation, Révision & Entretien
-- **À propos** — Histoire du garage fondé en 1998 par Michel Durand
-- **Process** — 4 étapes : Prise de RDV → Diagnostic → Devis & Validation → Livraison
-- **Avis clients** — 3 témoignages (Laurent M., Sophie T., Karim B.)
-- **Contact** — Coordonnées + formulaire de demande de rendez-vous
-- **Footer** — Liens et mentions légales
+| Section | Contenu |
+|---|---|
+| **Navbar** | Logo, liens de navigation, CTA "Prendre RDV" |
+| **Hero** | Accroche + stats (25 ans, 4k clients, 98% satisfaction) |
+| **Services** | 6 cartes : Mécanique, Carrosserie, Diagnostic, Freinage, Climatisation, Révision |
+| **À propos** | Histoire du garage fondé en 1998 par Michel Durand |
+| **Process** | 4 étapes : Prise de RDV → Diagnostic → Devis → Livraison |
+| **Avis clients** | 3 témoignages clients |
+| **Contact** | Coordonnées + formulaire de demande de rendez-vous |
+| **Footer** | Liens et mentions légales |
 
-## Images
+---
 
-Les images sont référencées depuis le dossier `img/`.  
-Pour le développement rapide, vous pouvez utiliser des URLs Unsplash directement dans `css/style.css` et `index.html` :
+## Personnalisation rapide
 
-- **Hero** : `https://images.unsplash.com/photo-1632823471565-1ecdf5c6da3e?w=1600&q=80`
-- **About** : `https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80`
-
-## Fichiers manquants
-
-Pour que le site soit fonctionnel, il reste à créer :
-
-1. `css/style.css` — styles complets (nav, hero, grille de services, formulaire, footer…)
-2. `js/main.js` — logique JS (scroll reveal sur les éléments `.reveal`, menu mobile, fonction `submitForm()`)
-3. Les images dans `img/`
-
-## Lancer le site
-
-Ouvrez simplement `index.html` dans un navigateur, ou utilisez un serveur local :
-
-```bash
-# Python
-python -m http.server 8000
-
-# Node.js (npx)
-npx serve .
-```
+- **Services** : cartes dans `index.html` section `#services`
+- **Témoignages** : cartes dans `index.html` section `#avis`
+- **Coordonnées** : adresse, téléphone, email, horaires dans `index.html` section `#contact`
+- **Couleurs** : variables CSS dans `css/style.css`
+- **Images** : remplacer les fichiers dans `img/`
 
 ---
 
