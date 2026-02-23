@@ -1,21 +1,22 @@
 # AutoPrecision — Site Garagiste
 
-Site statique HTML / CSS / JS pour un garage automobile fictif.
+Site HTML / CSS / JS pour un garage automobile.
+Formulaire non fonctionnel car site exemple
 
 ## Structure du projet
 
 ```
 garage-site/
-├── index.html              ← Page principale (✅ présent)
+├── index.html              
 ├── css/
-│   └── style.css           ← Tous les styles (⚠️ à créer)
+│   └── style.css          
 ├── js/
-│   └── main.js             ← Scroll reveal, menu mobile, formulaire (⚠️ à créer)
+│   └── main.js             
 └── img/
-    ├── hero.jpg            ← Image de fond du hero (⚠️ à ajouter)
-    ├── about.jpg           ← Photo de l'atelier (⚠️ à ajouter)
-    ├── pistolet_peinture.png ← Icône service carrosserie (⚠️ à ajouter)
-    └── disque_frein.png    ← Icône service freinage (⚠️ à ajouter)
+    ├── hero.jpg           
+    ├── about.jpg          
+    ├── pistolet_peinture.png 
+    └── disque_frein.png   
 ```
 
 ## Contenu de la page
