@@ -2,30 +2,53 @@
 
 ## Installation & lancement
 
-Ouvrir directement `index.html` dans un navigateur, ou via un serveur local :
+```bash
+npm install
+npm run dev
+```
+
+Build de production :
+
+```bash
+npm run build
+npm run preview
+```
+
+---
 
 ## Stack technique
 
-- **HTML / CSS / JS** — site statique, zéro dépendance
-- **CSS custom** — styles dans `css/style.css`
-- **JS vanilla** — scroll reveal, menu mobile, formulaire dans `js/main.js`
+- **React 18** — composants fonctionnels
+- **Vite** — bundler et dev server
+- **CSS vanilla** — styles dans `src/index.css` (aucune dépendance CSS externe)
 
 ---
 
 ## Structure des fichiers
 
 ```
-garage-site/
-├── index.html                ← Page principale (composition complète)
-├── css/
-│   └── style.css             ← Tous les styles (nav, hero, grille, formulaire, footer)
-├── js/
-│   └── main.js               ← Scroll reveal (.reveal), menu mobile, submitForm()
-└── img/
-    ├── hero.jpg              ← Image de fond du hero
-    ├── about.jpg             ← Photo de l'atelier
-    ├── pistolet_peinture.png ← Icône service Carrosserie & Peinture
-    └── disque_frein.png      ← Icône service Freinage & Suspension
+Site_Garage/
+├── index.html                ← Entry point Vite
+├── package.json
+├── vite.config.js
+├── public/
+│   └── img/
+│       ├── about.jpg             ← Photo de l'atelier
+│       ├── pistolet_peinture.png ← Icône service Carrosserie & Peinture
+│       └── disque_frein.png      ← Icône service Freinage & Suspension
+└── src/
+    ├── main.jsx              ← createRoot, import CSS global
+    ├── App.jsx               ← Composition + IntersectionObserver (scroll reveal)
+    ├── index.css             ← Tous les styles (nav, hero, grille, formulaire, footer)
+    └── components/
+        ├── Nav.jsx           ← Effet nav au scroll + menu hamburger mobile
+        ├── Hero.jsx          ← Section hero avec stats
+        ├── Services.jsx      ← Grille 6 services
+        ├── About.jsx         ← Section histoire du garage
+        ├── Process.jsx       ← 4 étapes du parcours client
+        ├── Testimonials.jsx  ← 3 avis clients
+        ├── Contact.jsx       ← Coordonnées + formulaire avec feedback
+        └── Footer.jsx        ← Liens et mentions légales
 ```
 
 ---
@@ -45,13 +68,24 @@ garage-site/
 
 ---
 
+## Comportements interactifs
+
+- **Scroll reveal** — `IntersectionObserver` dans `App.jsx`, applique `.visible` sur les éléments `.reveal`
+- **Stagger** — délai progressif sur les cartes des grilles (services, process, avis)
+- **Effet nav** — fond plus opaque après 60px de scroll (`Nav.jsx`)
+- **Menu hamburger** — toggle mobile via `useState` (`Nav.jsx`)
+- **Formulaire** — feedback visuel vert à l'envoi, reset après 3,5s (`Contact.jsx`)
+
+---
+
 ## Personnalisation rapide
 
-- **Services** : cartes dans `index.html` section `#services`
-- **Témoignages** : cartes dans `index.html` section `#avis`
-- **Coordonnées** : adresse, téléphone, email, horaires dans `index.html` section `#contact`
-- **Couleurs** : variables CSS dans `css/style.css`
-- **Images** : remplacer les fichiers dans `img/`
+- **Services** : tableau `services` dans `src/components/Services.jsx`
+- **Témoignages** : tableau `testimonials` dans `src/components/Testimonials.jsx`
+- **Étapes process** : tableau `steps` dans `src/components/Process.jsx`
+- **Coordonnées** : directement dans `src/components/Contact.jsx`
+- **Couleurs** : variables CSS dans `src/index.css` (`:root`)
+- **Images** : remplacer les fichiers dans `public/img/`
 
 ---
 
